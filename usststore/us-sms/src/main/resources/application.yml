@@ -1,0 +1,18 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: sms-service
+  rabbitmq:
+    host: 192.168.154.128
+    username: liudahai
+    password: 627319
+    virtual-host: /usststore
+  redis:
+    host: 192.168.154.128
+us:
+  sms:
+    accessKeyId: LTAI4FzwmtXk2Dvcnk8rcjyN #accessKeyId
+    accessKeySecret: c8uQZ4ugCTHWbwJeNMBWQplLKKW71M #AccessKeySecret
+    signName: 上理商城 # 签名名称
+    verifyCodeTemplate: SMS_197886547 # 模板名称

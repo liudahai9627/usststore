@@ -1,0 +1,33 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: auth-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10020/eureka
+    registry-fetch-interval-seconds: 10
+  instance:
+    lease-renewal-interval-in-seconds: 5 # 每隔5秒发送一次心跳
+    lease-expiration-duration-in-seconds: 10 # 10秒不发送就过期
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}
+us:
+  jwt:
+    secret: us@Login(Auth}*^31)&heiMa% # 登录校验的密钥
+    pubKeyPath: F:\usststore\rsa\rsa.pub # 公钥地址
+    priKeyPath: F:\usststore\rsa\rsa.pri # 私钥地址
+    expire: 30 # 过期时间,单位分钟
+    cookieName: US_TOKEN
+ribbon:
+  ConnectTimeout: 300000 # 连接超时时间(ms)
+  ReadTimeout: 300000 # 通信超时时间(ms)
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 300000
+        readTimeout: 300000
+

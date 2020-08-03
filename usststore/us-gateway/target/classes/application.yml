@@ -1,0 +1,58 @@
+server:
+  port: 10010
+spring:
+  application:
+    name: us-gateway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10020/eureka
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    #instance-id: ${spring.application.name}:${server.port}
+zuul:
+  prefix: /us # 添加路由前缀
+  routes:
+    item-service: /item/**
+    search-service: /search/**
+    user-service: /user/**
+    auth-service: /auth/**
+    cart-service: /cart/*
+    order-service: /order/*
+  add-host-header: true #添加host头信息
+  sensitive-headers:
+    #upload-service:
+      #path: /upload/**
+      #serviceId: upload-service
+      #strip-prefix: false # 不忽略前缀upload，即会在前端路径的前提下加上upload
+  ignored-services:
+      - upload-service # 忽略upload-service服务
+  # retryable: true
+ribbon:
+  ConnectTimeout: 500000 # 连接超时时间(ms)
+  ReadTimeout: 500000 # 通信超时时间(ms)
+  #OkToRetryOnAllOperations: true # 是否对所有操作重试
+  MaxAutoRetriesNextServer: 0 # 同一服务不同实例的重试次数
+  MaxAutoRetries: 0 # 同一实例的重试次数
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisecond: 500000 # 熔断超时时长：10000ms
+us:
+  jwt:
+    pubKeyPath: F:\usststore\rsa\rsa.pub # 公钥地址
+    cookieName: US_TOKEN
+  filter:
+    allowPaths:
+      - /us/auth
+      - /us/search
+      - /us/user/register
+      - /us/user/check
+      - /us/user/code
+      - /us/item
+

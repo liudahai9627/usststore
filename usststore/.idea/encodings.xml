@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/us-auth" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/us-auth/us-auth-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/us-auth/us-auth-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/us-cart" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/us-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/us-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/us-item" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/us-item/us-item-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/us-item/us-item-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/us-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/us-page" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/us-registry" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/us-search" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/us-sms" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/us-upload" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/us-user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/us-user/us-user-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/us-user/us-user-service" charset="UTF-8" />
+  </component>
+</project>

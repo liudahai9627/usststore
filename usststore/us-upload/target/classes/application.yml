@@ -1,0 +1,47 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: upload-service
+  servlet:
+    multipart:
+      max-file-size: 5MB # 限制上传文件大小
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10020/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 5 # 每隔5秒发送一次心跳
+    lease-expiration-duration-in-seconds: 10 # 10秒不发送就过期
+    ip-address: 127.0.0.1
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
+fdfs:
+  so-timeout: 2500
+  connect-timeout: 600
+  thumb-image:
+    width: 60
+    height: 60
+  tracker-list:
+    - 192.168.154.128:22122
+us:
+  upload:
+    baseUrl: http://image.usststore.com/
+    allowTypes:
+      - image/jpeg
+      - image/png
+      - image/bmp
+
+ribbon:
+  ConnectTimeout: 50000 # 连接超时时间(ms)
+  ReadTimeout: 50000 # 通信超时时间(ms)
+  # OkToRetryOnAllOperations: true # 是否对所有操作重试
+  MaxAutoRetriesNextServer: 0 # 同一服务不同实例的重试次数
+  MaxAutoRetries: 0 # 同一实例的重试次数
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisecond: 50000 # 熔断超时时长：10000ms

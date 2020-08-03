@@ -1,0 +1,52 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: search-service
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 192.168.154.128:9300
+  jackson:
+    default-property-inclusion: non_null
+  rabbitmq:
+      host: 192.168.154.128
+      username: liudahai
+      password: 627319
+      virtual-host: /usststore
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10020/eureka
+      registry-fetch-interval-seconds: 5
+  instance:
+    lease-renewal-interval-in-seconds: 5 # 每隔5秒发送一次心跳
+    lease-expiration-duration-in-seconds: 300 # 10秒不发送就过期
+    #non-secure-port: 80
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    #instance-id: ${spring.application.name}:${server.port}
+ribbon:
+  ConnectTimeout: 300000 # 连接超时时间(ms)
+  ReadTimeout: 300000 # 通信超时时间(ms)
+  # OkToRetryOnAllOperations: true # 是否对所有操作重试
+  #MaxAutoRetriesNextServer: 0 # 同一服务不同实例的重试次数
+  #MaxAutoRetries: 0 # 同一实例的重试次数
+#hystrix:
+  #command:
+    #default:
+      #execution:
+        #timeout:
+          #enabled: false
+        #isolation:
+          #thread:
+            #timeoutInMillisecond: 300000 # 熔断超时时长：10000ms
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 300000
+        readTimeout: 300000
+
+

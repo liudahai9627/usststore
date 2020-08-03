@@ -1,0 +1,33 @@
+server:
+  port: 10020
+spring:
+  application:
+    name: us-registry
+eureka:
+  instance:
+    ip-address: 127.0.0.1 #把ip地址写死
+    prefer-ip-address: true
+  #server:
+    #peer-node-connect-timeout-ms: 20000
+    #enable-self-preservation: false # 关闭自我保护
+  client:
+    fetch-registry: false   #不拉取服务列表
+    register-with-eureka: false  #不将自己注册到eureka中
+    service-url:
+      defaultZone: http://127.0.0.1:${server.port}/eureka #注册到自己
+  #server:
+    #enable-self-preservation: false # 关闭自我保护
+    #eviction-interval-timer-in-ms: 5000 # 每隔5秒进行一次服务列表清理
+#ribbon:
+  #ConnectTimeout: 50000 # 连接超时时间(ms)
+  #ReadTimeout: 50000 # 通信超时时间(ms)
+  # OkToRetryOnAllOperations: true # 是否对所有操作重试
+  #MaxAutoRetriesNextServer: 0 # 同一服务不同实例的重试次数
+  #MaxAutoRetries: 0 # 同一实例的重试次数
+#hystrix:
+  #command:
+    #default:
+      #execution:
+        #isolation:
+          #thread:
+            #timeoutInMillisecond: 50000 # 熔断超时时长：10000ms

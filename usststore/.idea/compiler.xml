@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="us-auth-common" />
+        <module name="us-auth-service" />
+        <module name="us-cart" />
+        <module name="us-common" />
+        <module name="us-gateway" />
+        <module name="us-item-interface" />
+        <module name="us-item-service" />
+        <module name="us-order" />
+        <module name="us-page" />
+        <module name="us-registry" />
+        <module name="us-search" />
+        <module name="us-sms" />
+        <module name="us-upload" />
+        <module name="us-user-interface" />
+        <module name="us-user-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="us-auth" target="1.8" />
+      <module name="us-auth-common" target="1.8" />
+      <module name="us-auth-service" target="1.8" />
+      <module name="us-cart" target="1.8" />
+      <module name="us-common" target="1.8" />
+      <module name="us-gateway" target="1.8" />
+      <module name="us-item" target="1.8" />
+      <module name="us-item-interface" target="1.8" />
+      <module name="us-item-service" target="1.8" />
+      <module name="us-order" target="1.8" />
+      <module name="us-page" target="1.8" />
+      <module name="us-registry" target="1.8" />
+      <module name="us-search" target="1.8" />
+      <module name="us-sms" target="1.8" />
+      <module name="us-upload" target="1.8" />
+      <module name="us-user" target="1.8" />
+      <module name="us-user-interface" target="1.8" />
+      <module name="us-user-service" target="1.8" />
+      <module name="usitem" target="1.8" />
+      <module name="usststore" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
